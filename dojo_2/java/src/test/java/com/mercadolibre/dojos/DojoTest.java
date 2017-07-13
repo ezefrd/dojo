@@ -19,42 +19,47 @@ public class DojoTest {
 	@Before
 	public void setup() {
 		this.sheet = new SpreadSheet();
+
 	}
 	
 	@Test
-	@Ignore
 	public void testSpreadSheet_withNumericValues_shouldPopulateTwoCells() {
-		
+
+		this.sheet.set("a1",1);
+		this.sheet.set("a2",2);
+
 		// ... 
         // Code here!
         // ... 
 		
-		Object a1 = this.sheet.get("a1");
-		Object a2 = this.sheet.get("a2");
+		Cell a1 = this.sheet.get("a1");
+		Cell a2 = this.sheet.get("a2");
 		
 		assertThat(a1, is(notNullValue()));
-		assertThat((Integer) a1, is( equalTo(1) ));
+		assertThat((Integer) a1.getContent(), is( equalTo(1) ));
 		
 		assertThat(a2, is(notNullValue()));
-		assertThat((Integer) a2, is( equalTo(2) ));
+		assertThat((Integer) a2.getContent(), is( equalTo(2) ));
 	}
 	
 	@Test
-	@Ignore
 	public void testSpreadSheet_withALabelAndANumericValue_shouldPopulateTwoCells() {
-		
+
+		this.sheet.set("a1",1);
+		this.sheet.set("a2","Valor:");
+
 		// ... 
         // Code here!
         // ... 
-		
-		Object a1 = this.sheet.get("a1");
-		Object a2 = this.sheet.get("a2");
+
+		Cell a1 = this.sheet.get("a1");
+		Cell a2 = this.sheet.get("a2");
 		
 		assertThat(a1, is(notNullValue()));
-		assertThat((Integer) a1, is( equalTo(1) ));
+		assertThat((Integer) a1.getContent(), is( equalTo(1) ));
 		
 		assertThat(a2, is(notNullValue()));
-		assertThat((String) a2, is( equalTo("Valor:") ));
+		assertThat((String) a2.getContent(), is( equalTo("Valor:") ));
 	}
 	
 	@Test

@@ -2,8 +2,8 @@ package com.mercadolibre.dojos;
 
 public interface ISpreadSheet {
 	
-	Object get(Object objDirection);
+	Cell get(CellAddress address);
 	
-	void set(Object objToSet, Object valToSet);
+	void set(CellAddress address, CellContent content);
 	
 }
