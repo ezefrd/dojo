@@ -3,7 +3,7 @@ function Profit(value){
 }
 
 Profit.prototype.equals = function(anotherProfit){
-    return this.value == anotherProfit.value;
+    return this.value.equals( anotherProfit.value );
 }
 
 module.exports = Profit;

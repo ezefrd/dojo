@@ -7,4 +7,8 @@ Item.prototype.accumulateCost = function(cost){
     return cost;
 }
 
+Item.prototype.asArray = function(){
+    return [this];
+}
+
 module.exports = Item;

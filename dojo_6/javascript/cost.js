@@ -7,4 +7,8 @@ Cost.prototype.sum = function(cost){
     return this;
 }
 
+Cost.prototype.divide = function(quantity){
+    return new Cost(this.amount / quantity);
+}
+
 module.exports = Cost;

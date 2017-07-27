@@ -1,8 +1,8 @@
 const Cost = require('./cost');
 const Profit = require('./profit');
 
-function Selling(items, sellingPrice) {
-    this.items = items;
+function Selling(itemsOrPackage, sellingPrice) {
+    this.itemsOrPackage = itemsOrPackage;
     this.sellingPrice = sellingPrice;
 }
 
@@ -13,8 +13,7 @@ Selling.prototype.calculateProfit = function () {
 
 Selling.prototype.calculateTotalCost = function () {
     var cost = new Cost(0);
-    this.items.forEach(function (item) {
-        //cost.sum(item.getCost());
+    this.itemsOrPackage.asArray().forEach(function (item) {
         item.accumulateCost(cost);
     }, this);
 
